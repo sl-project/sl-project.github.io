@@ -1,0 +1,40 @@
+#!/bin/sh
+set -e
+if [ "$USER" != "root" ] ; then 
+    echo "Installation script must be run as root" 
+    exit 0
+fi
+if [ -f /etc/debian_version ] ; then
+    if grep -iq ubuntu /etc/issue ; then
+        PACKAGES="apache2 mongodb libapache2-mod-php5 php5-cli php5-mongo php5-gd php5-geoip php5-json git"
+    else
+        if ! grep -irq "wheezy-backports" /etc/apt/ ; then
+            echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list.d/backports.list
+        fi
+        PACKAGES="apache2 mongodb libapache2-mod-php5 php5-cli php5-mongo php5-gd php5-geoip git"
+    fi
+    apt-get update && apt-get install -y $PACKAGES
+
+    echo "<VirtualHost *:80>
+    DocumentRoot $( pwd )
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
+    <Directory $( pwd )>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    </Directory>
+</VirtualHost>" > /etc/apache2/sites-available/scanlab
+
+    a2enmod rewrite && php5enmod mongo && php5enmod gd && php5enmod geoip
+    a2dissite default && a2ensite scanlab
+    git clone https://github.com/digital-ghost/scanlab.git . && service apache2 restart
+    cp inc/example.settings.php inc/settings.php
+    echo "Your Scanlab installation is almost ready to use!"
+    echo "Visit http://localhost/install.php to complete installation."
+else
+    echo "Your operating system is not supported by this installer"
+fi

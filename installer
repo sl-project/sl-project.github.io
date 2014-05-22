@@ -39,8 +39,9 @@ if [ -f /etc/debian_version ] ; then
     fi
 
     a2enmod rewrite && php5enmod mongo && php5enmod gd && php5enmod geoip
-    git clone https://github.com/digital-ghost/scanlab.git . && service apache2 restart
+    git clone https://github.com/digital-ghost/scanlab.git . 
     cp inc/example.settings.php inc/settings.php
+    service apache2 restart && service mongodb restart
     echo "Your Scanlab installation is almost ready to use!"
     echo "Visit http://localhost/install.php to complete installation."
 else

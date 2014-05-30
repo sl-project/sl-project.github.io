@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="http://yandex.st/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="http://yandex.st/jquery/2.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <style>
+            html,body{font-family: 'Open Sans', sans-serif;}
+            .lal {padding: 20px; margin: 20px;}
+            .navigation {
+                max-width: 600px;
+                text-align: center;
+                margin: 0 auto;
+            }
+            .sl-img {width: 100%;display: block;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+<a href="https://github.com/digital-ghost"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+
+            <div class="text-center lal">
+                <h1>Scanlab</h1>
+                <h3>deep web search engine</h3>
+            </div>
+
+            <div class="navigation">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#home" data-toggle="tab">ScanLab</a></li>
+                    <li><a href="#features" data-toggle="tab">Features</a></li>
+                    <li><a href="#screenshots" data-toggle="tab">Screenshots</a></li>
+                    <li><a href="#download" data-toggle="tab">Download</a></li>
+                    <li ><a href="mailto:icarus@network.stalker.fi">Developer</a></li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">
+
+
+                    <div class="row lal">
+                        <div class="col-md-6">
+                            <p class="lead">
+                                Scanlab is a deep web search engine that allows users to find a lot of different network devices in the internet.
+                                Scanlab was developed as an alternative to <a href="http://shodanhq.com/" target="_blank">shodanhq</a>, 
+                                but became free and opensource software. You can install scanlab to your own server and do researches in the dark internet.
+                                You'll just need some <a href="#download" data-toggle="tab">linux skills</a> 
+                                and <a href="http://nmap.org/download.html" target="_blank">nmap</a>.
+                            </p>
+                        </div> 
+                        <div class="col-md-6 pull-right">
+                            <img src="screen1.png" class="sl-img" >
+                        </div> 
+                    </div>
+
+                    <hr>
+                    <div class="row lal">
+                        <div class="col-md-6">
+                            <h1>Why Scanlab?</h1>
+                            <p>Scanlab will be useful for security specialists and freelance darknet researchers. 
+                            All the port scanning magic we leave to <a href="http://nmap.org/download.html" target="_blank">nmap</a>.</p>
+                            <p><b>Scanlab builds a search engine from nmap XML reports</b>.
+                            It is pretty useful when you have a lot of reports and need to search through them.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img class="sl-img" src="screen2.png">
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row lal">
+                        <div class="col-md-6">
+                            <h1>What is deep web?</h1>
+                            <blockquote>
+                                Deep web is World Wide Web content that is not part of the Surface Web, which is indexed by standard search engines.
+                            </blockquote>
+                            <p>Everyday people buy new network devices and connect them to the internet. 
+                            Those devices can be discovered and exploited from the global network.
+                            People are lazy, they always forget to change their default passwords. 
+                            You can gain access to thousands devices like printers, routers, phones, cameras in the deep web.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img class="sl-img" src="cctv.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="features">
+
+                    <div class="row lal">
+                        <div class="col-md-6">
+                            <h1>Features</h1>
+                            <p> Usage of Scanlab is really easy: just log in and upload XML reports to a web form.
+                            Scanlab saves them to the database and builds the search engine.</p>
+                            <p>Scanlab has unique features: device tags, rating, console client.</p>
+                            <p>Device tags are device tags. Scanlab gives tags to reports, so you can find cameras, printers and other devices easily.</p>
+                            <p> Rating and favorites are for sorting and saving interesting reports.
+                            Adding the report to favorites increases its rating.</p>
+                            <p>Console client is useful for automation and uploading large reports.</p>
+                            <p>Scanlab is free and opensource software, opposed to <a target="_blank" href="http://shodanhq.com/" >shodanhq</a>.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img class="sl-img" src="screen3.png">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane" id="screenshots">
+                    <div class="row lal text-center">
+                        <div class="col-md-6">
+                            <img class="sl-img" src="screen5.png">
+                            control panel
+                        </div>
+                        <div class="col-md-6">
+                            <img class="sl-img" src="screen4.png">
+                            overview of services
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="download">
+                    <div class="lal">
+                        <div class="lal text-center">
+                            <a href="https://github.com/digital-ghost/scanlab" target="_blank" class="btn btn-success btn-lg">GitHub</a>
+                        </div>
+
+                        <h1>Debian Wheezy, Kali Linux, Ubuntu:</h1>
+                        <p> 
+                            Use the automatic installer.
+                            Go to your installation folder:
+                        </p>
+
+                        <blockquote>
+                            mkdir scanlab &amp;&amp; cd scanlab
+                        </blockquote>
+
+                        <p>Run this as <b>root</b>:</p>
+
+                        <blockquote>
+                            curl -s http://scanlab.project.li/installer | bash -
+                        </blockquote>
+
+                        <p>
+                            Complete the installation at
+                            <a href="http://localhost/install.php" target="_blank">http://localhost/install.php</a>
+                        </p>
+                        <hr>
+                        <h1>Other systems:</h1>
+                        <p>Look at INSTALL.md.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>
